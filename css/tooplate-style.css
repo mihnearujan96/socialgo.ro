@@ -86,6 +86,7 @@ p:last-child {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: 600;
+  text-align: center;
 }
 
 .contact-link:hover {
@@ -242,7 +243,7 @@ p:last-child {
 }
 
 .tm-text-blue {
-  color: #108ac1;
+  color: #000000;
 }
 
 .tm-activity-block {
@@ -386,6 +387,7 @@ figure {
 .tm-contact-figcaption {
   margin-top: 27px;
   max-width: 600px;
+  text-align: center;
 }
 
 .tm-contact-form-container {

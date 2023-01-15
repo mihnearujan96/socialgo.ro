@@ -53,6 +53,7 @@ p:last-child {
 
 .header {
   position: relative;
+  padding-bottom: 74px;
 }
 
 .tm-page-header {
@@ -66,7 +67,7 @@ p:last-child {
 
 .tm-nav-section {
   position: absolute;
-  top: calc(100% + 50px);
+  top: calc(100% - 48px);
   left: 0;
   width: 100%;
   border-top: 1px solid #909090;
@@ -143,7 +144,6 @@ p:last-child {
   align-items: center;
   position: relative;
   overflow: hidden;
-  margin-top: 74px;
 }
 
 .tm-banner-section video {
@@ -153,6 +153,7 @@ p:last-child {
   transform: translate(-50%, -60%);
   min-width: 100%;
   min-height: 100%;
+  filter: brightness(56%)
 }
 
 .tm-banner-text-container {
@@ -291,7 +292,8 @@ p:last-child {
 }
 
 .tm-company-img-container img {
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
   height: auto;
 }
 

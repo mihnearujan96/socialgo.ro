@@ -271,6 +271,10 @@ p:last-child {
 .tm-activity-img-container {
   width: 180px;
   height: 180px;
+  
+}
+.tm-activity-img-new {
+  width: 180px;
 }
 
 .tm-company-section {

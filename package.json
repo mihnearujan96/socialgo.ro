@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "description": "SocialGo — Creative Technology Studio website",
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

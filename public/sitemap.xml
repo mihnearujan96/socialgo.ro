@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://socialgo.ro/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://socialgo.ro/servicii</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://socialgo.ro/web-development</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://socialgo.ro/aplicatii-web</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://socialgo.ro/marketing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://socialgo.ro/fotografie</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://socialgo.ro/videografie</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://socialgo.ro/drona</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://socialgo.ro/hoteluri-business</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://socialgo.ro/portofoliu</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://socialgo.ro/despre</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://socialgo.ro/contact</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+</urlset>

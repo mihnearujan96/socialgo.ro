@@ -28,7 +28,7 @@ export default function WebAppsPage() {
       <PageHero
         eyebrow="02 · Aplicații web"
         title={'APLICAȚII CARE\nTE AJUTĂ LA MUNCĂ.'}
-        description="Construiesc aplicații pe procesul tău — de la rezervări la panouri interne — ușor de folosit și stabile."
+        description="Construim aplicații pe procesul tău — de la rezervări la panouri interne — ușor de folosit și stabile."
         tone="from-accent/10"
       />
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">

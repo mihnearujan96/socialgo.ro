@@ -145,4 +145,4 @@ export const photoPricing: PricingPackage[] = [
 ]
 
 export const droneNote =
-  'Zborul cu drona depinde de autorizări, restricții locale și vreme. Lucrez cu piloți certificați EASA și respect zonele în care zborul este interzis.'
+  'Zborul cu drona depinde de autorizări, restricții locale și vreme. Lucrăm cu piloți certificați EASA și respectăm zonele în care zborul este interzis.'

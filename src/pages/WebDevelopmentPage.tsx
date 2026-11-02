@@ -30,7 +30,7 @@ export default function WebDevelopmentPage() {
           <ProjectShowcase projects={portfolioByShowcase('presentation')} />
         </div>
 
-        <h2 className="mt-16 font-display text-3xl">Ce pot face</h2>
+        <h2 className="mt-16 font-display text-3xl">Ce putem face</h2>
         <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {webDevServices.map((item) => (
             <li key={item} className="rounded-2xl border border-border bg-surface px-4 py-3 text-sm text-muted">

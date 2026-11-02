@@ -36,8 +36,8 @@ export default function PhotographyPage() {
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
         <div className="max-w-3xl text-muted leading-relaxed">
           <p>
-            Salut — sunt Mihnea. Fotografiez ca să rămână momentele importante: gesturi, emoții,
-            detalii pe care le uiți dacă nimeni nu le prinde la timp.
+            Salut — sunt Mihnea, fotograful din echipa SocialGo. Fotografiez ca să rămână momentele
+            importante: gesturi, emoții, detalii pe care le uiți dacă nimeni nu le prinde la timp.
           </p>
           <p className="mt-4">
             Portofoliul complet e pe{' '}
@@ -78,8 +78,8 @@ export default function PhotographyPage() {
 
         {gallery.length === 0 && (
           <div className="mt-10 rounded-[2rem] border border-border bg-bg-secondary p-8 text-muted">
-            Pentru „{filter}”, galeria se completează pe măsură ce adaug proiecte. Între timp, scrie-mi
-            pe WhatsApp sau vezi{' '}
+            Pentru „{filter}”, galeria se completează pe măsură ce adăugăm proiecte. Între timp,
+            scrie-ne pe WhatsApp sau vezi{' '}
             <a
               href={contactInfo.photographySite}
               className="text-accent underline"

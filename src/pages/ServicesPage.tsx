@@ -16,7 +16,7 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Servicii"
-        title={'TOT CE FAC,\nÎNTR-UN SINGUR LOC.'}
+        title={'TOT CE FACEM,\nÎNTR-UN SINGUR LOC.'}
         description="Alege ce ai nevoie — sau combină mai multe într-un pachet pentru firmă sau eveniment."
         tone="from-violet/10"
       />

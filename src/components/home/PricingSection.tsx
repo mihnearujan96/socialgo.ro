@@ -120,7 +120,7 @@ export function PricingSection() {
             <MessageCircle className="h-4 w-4" />
             Solicită pe WhatsApp
           </Button>
-          <p className="text-sm text-muted">Ai nevoie de mai multe servicii? Îți fac un pachet pe măsură.</p>
+          <p className="text-sm text-muted">Ai nevoie de mai multe servicii? Îți facem un pachet pe măsură.</p>
         </div>
       </div>
     </section>

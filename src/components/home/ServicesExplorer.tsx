@@ -32,7 +32,7 @@ export function ServicesExplorer() {
         <SectionHeading
           number="00"
           eyebrow="Servicii"
-          title={'CE POT FACE\nPENTRU TINE.'}
+          title={'CE PUTEM FACE\nPENTRU TINE.'}
           description="Alege ce ai nevoie — sau combină mai multe într-un singur proiect."
         />
 

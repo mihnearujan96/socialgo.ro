@@ -24,7 +24,7 @@ export default function PortfolioPage() {
       <PageHero
         eyebrow="Portofoliu"
         title={'CÂTEVA DINTRE\nPROIECTELE NOASTRE.'}
-        description="Adaug aici lucrări reale pe măsură ce le public. Dacă ai un proiect, scrie-mi pe WhatsApp."
+        description="Adăugăm aici lucrări reale pe măsură ce le publicăm. Dacă ai un proiect, scrie-ne pe WhatsApp."
         ctaHref={`https://wa.me/${contactInfo.whatsapp}`}
         ctaLabel="Propune un proiect"
         tone="from-accent/10"

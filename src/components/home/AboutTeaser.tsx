@@ -9,7 +9,7 @@ export function AboutTeaser() {
           <SectionHeading
             number="09"
             eyebrow="Despre"
-            title={'CINE ESTE\nÎN SPATELE SOCIALGO.'}
+            title={'CINE SUNTEM\nÎN SPATELE SOCIALGO.'}
           />
           <p className="mt-6 max-w-xl text-muted leading-relaxed">
             În spatele SocialGo e o echipă. Facem site-uri, aplicații, conținut, foto și video

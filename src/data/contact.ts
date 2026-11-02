@@ -4,7 +4,7 @@ export const contactInfo = {
   phoneDisplay: '+40 756 322 681',
   whatsapp: '40756322681',
   location: 'România',
-  locationNote: 'Lucrez în toată țara — București, Vâlcea, Cluj, Iași și nu numai.',
+  locationNote: 'Lucrăm în toată țara — București, Vâlcea, Cluj, Iași și nu numai.',
   photographyEmail: 'mihnearujan@gmail.com',
   photographySite: 'https://mihnearujan.ro/',
   social: {

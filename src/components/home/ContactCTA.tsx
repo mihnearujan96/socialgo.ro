@@ -2,6 +2,8 @@ import { Button } from '@/components/ui/Button'
 import { contactInfo } from '@/data/contact'
 import { MessageCircle } from 'lucide-react'
 
+const waHref = `https://wa.me/${contactInfo.whatsapp}`
+
 export function ContactCTA() {
   return (
     <section className="relative overflow-hidden border-t border-border bg-bg py-24 md:py-32" id="contact-home">
@@ -9,30 +11,23 @@ export function ContactCTA() {
       <div className="relative mx-auto max-w-4xl px-5 text-center md:px-8">
         <p className="font-mono text-[11px] uppercase tracking-[0.35em] text-accent">Contact</p>
         <h2 className="mt-5 font-display text-4xl sm:text-5xl md:text-7xl">
-          AI O IDEE?
+          AI UN PROIECT?
           <br />
-          HAI SĂ O FACEM REALITATE.
+          SCRIE-NE PE WHATSAPP.
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-muted">
-          Spune-ne ce vrei să construiești — site, aplicație, campanie, film sau un pachet complet
-          pentru afacerea ta.
+          Fără formular. Ne spui pe scurt ce ai nevoie — nuntă, botez, reels, site — și îți răspundem
+          cu pașii următori.
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Button to="/contact">Trimite un brief</Button>
-          <Button href={`https://wa.me/${contactInfo.whatsapp}`} variant="outline" target="_blank" rel="noreferrer">
+          <Button href={waHref} target="_blank" rel="noreferrer">
             <MessageCircle className="h-4 w-4" />
-            WhatsApp
+            WhatsApp · {contactInfo.phoneDisplay}
+          </Button>
+          <Button href={`tel:${contactInfo.phone}`} variant="outline">
+            Sună acum
           </Button>
         </div>
-        <p className="mt-8 text-sm text-muted">
-          <a href={`mailto:${contactInfo.email}`} className="hover:text-accent">
-            {contactInfo.email}
-          </a>
-          {' · '}
-          <a href={`tel:${contactInfo.phone}`} className="hover:text-accent">
-            {contactInfo.phoneDisplay}
-          </a>
-        </p>
       </div>
     </section>
   )

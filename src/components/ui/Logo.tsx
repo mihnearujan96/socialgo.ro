@@ -16,7 +16,7 @@ export function Logo({ className, variant = 'full', onClick }: LogoProps) {
       aria-label="SocialGo — acasă"
     >
       <img
-        src="/brand/logo-primary.png"
+        src="/brand/logo-white.png"
         alt="SocialGo"
         className={
           variant === 'mark'

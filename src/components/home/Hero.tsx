@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button'
 import { HeroDevices } from '@/components/home/HeroDevices'
 import { preferReducedMotion } from '@/lib/utils'
 
-const keywords = ['CODE', 'CREATE', 'CAPTURE', 'GROW'] as const
+const keywords = ['CREATE', 'BUILD', 'CODE', 'CAPTURE'] as const
 
 export function Hero() {
   const [index, setIndex] = useState(0)
@@ -30,7 +30,7 @@ export function Hero() {
         {/* Copy */}
         <div className="order-2 text-center md:order-1 md:col-span-6 md:text-left">
           <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.28em] text-accent md:mb-5 md:tracking-[0.35em]">
-            Creative Technology Studio · România
+            Studio digital · România
           </p>
 
           <h1 className="font-display text-6xl leading-[1.05] tracking-[-0.03em] sm:text-7xl md:text-7xl lg:text-[6.75rem]">
@@ -55,17 +55,17 @@ export function Hero() {
           </h1>
 
           <p className="mt-5 font-display text-xl text-text/90 sm:text-2xl md:mt-6 md:text-2xl lg:text-3xl">
-            Construim digital. Creăm impact. Capturăm emoții.
+            Site-uri, conținut și foto-video — într-un singur loc.
           </p>
 
           <p className="mx-auto mt-3 max-w-md text-base leading-relaxed text-muted md:mx-0 md:mt-4 md:max-w-lg">
-            Development, marketing și producție vizuală. Un singur studio pentru ideile care merită
-            să iasă în evidență.
+            De la un site de prezentare la Reels, nunți sau filmări cu drona. Îți spunem clar ce
+            facem, cât costă și cum arată rezultatul.
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:mx-auto sm:max-w-sm md:mx-0 md:mt-8 md:max-w-none md:flex-row md:flex-wrap">
-            <Button to="/servicii" className="w-full md:w-auto">
-              Explorează serviciile
+            <Button href="/#servicii-home" className="w-full md:w-auto">
+              Vezi serviciile
               <ArrowDownRight className="h-4 w-4" />
             </Button>
             <Button href="/#pricing" variant="outline" className="w-full md:w-auto">

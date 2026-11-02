@@ -15,7 +15,7 @@ export function PageLoader({ visible }: PageLoaderProps) {
           aria-hidden={!visible}
         >
           <motion.img
-            src="/brand/logo-primary.png"
+            src="/brand/logo-white.png"
             alt="SocialGo"
             className="w-[220px] sm:w-[280px]"
             initial={{ opacity: 0, scale: 0.94 }}

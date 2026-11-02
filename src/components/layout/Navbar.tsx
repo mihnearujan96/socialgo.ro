@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { ChevronDown, Menu, MessageCircle, X } from 'lucide-react'
 import { Logo } from '@/components/ui/Logo'
 import { Button } from '@/components/ui/Button'
-import { mainNav } from '@/data/navigation'
-import { servicesNav } from '@/data/services'
+import { mainNav, serviceMenu } from '@/data/navigation'
+import { contactInfo } from '@/data/contact'
 import { cn } from '@/lib/utils'
+
+const waHref = `https://wa.me/${contactInfo.whatsapp}`
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -22,7 +25,8 @@ export function Navbar() {
 
   useEffect(() => {
     setOpen(false)
-  }, [location.pathname])
+    setServicesOpen(false)
+  }, [location.pathname, location.hash])
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -42,36 +46,117 @@ export function Navbar() {
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-4 sm:px-5 md:h-24 md:px-8">
           <Logo />
 
-          <nav className="hidden items-center gap-8 lg:flex" aria-label="Navigare principală">
-            {mainNav.map((item) =>
-              item.path.includes('#') ? (
-                <a
-                  key={item.path}
-                  href={item.path}
-                  className="text-sm tracking-wide text-muted transition-colors hover:text-text accent-underline"
-                >
-                  {item.label}
-                </a>
-              ) : (
-                <NavLink
-                  key={item.path}
-                  to={item.path}
-                  className={({ isActive }) =>
-                    cn(
-                      'text-sm tracking-wide text-muted transition-colors hover:text-text accent-underline',
-                      isActive && 'text-text',
-                    )
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              ),
-            )}
+          <nav className="hidden items-center gap-7 xl:flex" aria-label="Navigare principală">
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <button
+                type="button"
+                className="inline-flex items-center gap-1 text-sm tracking-wide text-muted transition-colors hover:text-text"
+                aria-expanded={servicesOpen}
+                onClick={() => setServicesOpen((v) => !v)}
+              >
+                Servicii
+                <ChevronDown className={cn('h-3.5 w-3.5 transition', servicesOpen && 'rotate-180')} />
+              </button>
+
+              <AnimatePresence>
+                {servicesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.18 }}
+                    className="absolute left-1/2 top-full z-50 mt-3 w-[min(92vw,720px)] -translate-x-1/2 rounded-3xl border border-border/80 bg-bg/95 p-5 shadow-2xl backdrop-blur-xl"
+                  >
+                    <div className="grid gap-6 sm:grid-cols-3">
+                      {serviceMenu.map((group) => (
+                        <div key={group.group}>
+                          <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-accent">
+                            {group.group}
+                          </p>
+                          <ul className="mt-3 space-y-1">
+                            {group.items.map((item) => (
+                              <li key={item.label}>
+                                {item.path.includes('#') ? (
+                                  <a
+                                    href={item.path}
+                                    className="block rounded-xl px-2 py-2 hover:bg-surface"
+                                    onClick={() => setServicesOpen(false)}
+                                  >
+                                    <span className="block text-sm text-text">{item.label}</span>
+                                    <span className="block text-xs text-muted">{item.hint}</span>
+                                  </a>
+                                ) : (
+                                  <Link
+                                    to={item.path}
+                                    className="block rounded-xl px-2 py-2 hover:bg-surface"
+                                    onClick={() => setServicesOpen(false)}
+                                  >
+                                    <span className="block text-sm text-text">{item.label}</span>
+                                    <span className="block text-xs text-muted">{item.hint}</span>
+                                  </Link>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-5 border-t border-border/70 pt-4">
+                      <a
+                        href="/#servicii-home"
+                        className="text-sm text-muted hover:text-accent"
+                        onClick={() => setServicesOpen(false)}
+                      >
+                        Vezi toate serviciile →
+                      </a>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {mainNav
+              .filter((item) => item.label !== 'Servicii')
+              .map((item) =>
+                item.path.includes('#') ? (
+                  <a
+                    key={item.path}
+                    href={item.path}
+                    className="text-sm tracking-wide text-muted transition-colors hover:text-text accent-underline"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    className={({ isActive }) =>
+                      cn(
+                        'text-sm tracking-wide text-muted transition-colors hover:text-text accent-underline',
+                        isActive && 'text-text',
+                      )
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                ),
+              )}
           </nav>
 
           <div className="hidden lg:block">
-            <Button to="/contact" variant="primary" className="!py-2.5 !px-5 text-xs uppercase tracking-[0.14em]">
-              Hai să vorbim
+            <Button
+              href={waHref}
+              target="_blank"
+              rel="noreferrer"
+              variant="primary"
+              className="!px-5 !py-2.5 text-xs uppercase tracking-[0.14em]"
+            >
+              <MessageCircle className="h-4 w-4" />
+              WhatsApp
             </Button>
           </div>
 
@@ -125,23 +210,41 @@ export function Navbar() {
               </nav>
 
               <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.3em] text-muted">
-                Lumi de servicii
+                Categorii
               </p>
-              <div className="mt-4 grid gap-2">
-                {servicesNav.map((s) => (
-                  <Link
-                    key={s.id}
-                    to={s.path}
-                    className="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm text-muted hover:bg-surface hover:text-text"
-                  >
-                    <span className="font-mono text-accent">{s.number}</span>
-                    {s.title}
-                  </Link>
+              <div className="mt-4 space-y-6">
+                {serviceMenu.map((group) => (
+                  <div key={group.group}>
+                    <p className="mb-2 text-xs uppercase tracking-[0.18em] text-accent">{group.group}</p>
+                    <div className="grid gap-1">
+                      {group.items.map((item) =>
+                        item.path.includes('#') ? (
+                          <a
+                            key={item.label}
+                            href={item.path}
+                            className="rounded-2xl px-3 py-3 text-sm text-muted hover:bg-surface hover:text-text"
+                            onClick={() => setOpen(false)}
+                          >
+                            {item.label}
+                          </a>
+                        ) : (
+                          <Link
+                            key={item.label}
+                            to={item.path}
+                            className="rounded-2xl px-3 py-3 text-sm text-muted hover:bg-surface hover:text-text"
+                          >
+                            {item.label}
+                          </Link>
+                        ),
+                      )}
+                    </div>
+                  </div>
                 ))}
               </div>
 
-              <Button to="/contact" className="mt-8 w-full">
-                Contactează-ne
+              <Button href={waHref} target="_blank" rel="noreferrer" className="mt-8 w-full">
+                <MessageCircle className="h-4 w-4" />
+                Scrie pe WhatsApp
               </Button>
             </div>
           </motion.div>

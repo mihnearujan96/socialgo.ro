@@ -11,9 +11,9 @@ export function HospitalityWorld() {
         </div>
         <SectionHeading
           number="07"
-          eyebrow="Business"
-          title={'AFACEREA TA MERITĂ MAI MULT\nDECÂT UN SIMPLU WEBSITE.'}
-          description="Construim pachetul potrivit pentru afacerea ta: site, conținut, foto, video și drone — în funcție de ce ai nevoie."
+          eyebrow="Pentru firme"
+          title={'MAI MULT DECÂT\nUN SITE SIMPLU.'}
+          description="Putem lega site-ul, conținutul, foto, video și drona într-un pachet potrivit afacerii tale."
         />
 
         <ul className="mt-14 grid gap-3 md:grid-cols-2">
@@ -25,8 +25,8 @@ export function HospitalityWorld() {
           ))}
         </ul>
 
-        <Button to="/hoteluri-business" className="mt-10">
-          Hai să vorbim despre proiectul tău
+        <Button href="/#contact-home" className="mt-10">
+          Hai să vorbim despre proiect
         </Button>
       </div>
     </section>

@@ -25,9 +25,9 @@ export function VideoWorld() {
         </div>
         <SectionHeading
           number="05"
-          eyebrow="Videography"
-          title={'POVEȘTI CARE\nMERITĂ SĂ FIE VĂZUTE.'}
-          description="Filme de nuntă, promoții de business, brand films și conținut pe format scurt."
+          eyebrow="Videografie"
+          title={'FILME PENTRU\nEVENIMENTE ȘI FIRMĂ.'}
+          description="Nunți, evenimente, promoții pentru firmă și video scurt pentru Instagram sau TikTok."
         />
 
         <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -39,8 +39,8 @@ export function VideoWorld() {
           ))}
         </div>
 
-        <Button to="/videografie" className="mt-10">
-          Explorează videografia
+        <Button href="/#pricing" className="mt-10">
+          Vezi prețurile
         </Button>
       </div>
     </section>

@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { MessageCircle } from 'lucide-react'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { PricingCard } from '@/components/ui/PricingCard'
 import { Button } from '@/components/ui/Button'
+import { contactInfo } from '@/data/contact'
 import {
   webPricing,
   marketingPricing,
@@ -10,13 +12,15 @@ import {
   type PricingPackage,
 } from '@/data/pricing'
 
+const waHref = `https://wa.me/${contactInfo.whatsapp}`
+
 type CategoryId = 'all' | 'web' | 'marketing' | 'photo' | 'drone'
 
 const categories: { id: CategoryId; label: string }[] = [
   { id: 'all', label: 'Toate' },
-  { id: 'web', label: 'Web & Apps' },
-  { id: 'marketing', label: 'Marketing' },
-  { id: 'photo', label: 'Foto & Video' },
+  { id: 'web', label: 'Site-uri & aplicații' },
+  { id: 'marketing', label: 'Reels & marketing' },
+  { id: 'photo', label: 'Nunți & evenimente' },
   { id: 'drone', label: 'Drone' },
 ]
 
@@ -28,25 +32,25 @@ const groups: {
 }[] = [
   {
     id: 'web',
-    title: 'Web Development & Aplicații',
+    title: 'Site-uri & aplicații web',
     packages: webPricing,
-    note: 'Prețurile pentru aplicații custom sunt indicative și se stabilesc după consultație.',
+    note: 'Prețurile pentru aplicații personalizate sunt indicative și se stabilesc după discuție.',
   },
   {
     id: 'marketing',
-    title: 'Digital Marketing',
+    title: 'Reels & marketing',
     packages: marketingPricing,
     note: 'Campaniile lunare și managementul continuu se ofertează personalizat.',
   },
   {
     id: 'photo',
-    title: 'Fotografie & Video',
+    title: 'Nunți, botezuri & evenimente',
     packages: photoPricing,
     note: 'Pentru alte tipuri de evenimente, prețul se stabilește în funcție de nevoie.',
   },
   {
     id: 'drone',
-    title: 'Producție Drone',
+    title: 'Filmări cu drona',
     packages: [
       {
         id: 'drone-start',
@@ -76,8 +80,8 @@ export function PricingSection() {
         <SectionHeading
           number="08"
           eyebrow="Prețuri"
-          title={'PREȚURI CLARE.\nPE CATEGORII.'}
-          description="Toate pachetele într-un singur loc. Alege categoria și vezi diferențele pe carduri."
+          title={'PREȚURI CLARE,\nSPUSE DIN START.'}
+          description="Alege categoria și vezi pachetele. Dacă ai un proiect mixt, îți facem o ofertă pe măsură."
         />
 
         <div className="mt-10 flex flex-wrap gap-2">
@@ -112,8 +116,11 @@ export function PricingSection() {
         </div>
 
         <div className="mt-14 flex flex-wrap items-center gap-4">
-          <Button to="/contact">Solicită o ofertă</Button>
-          <p className="text-sm text-muted">Ai un proiect mixt? Îți facem un pachet pe măsură.</p>
+          <Button href={waHref} target="_blank" rel="noreferrer">
+            <MessageCircle className="h-4 w-4" />
+            Solicită pe WhatsApp
+          </Button>
+          <p className="text-sm text-muted">Ai nevoie de mai multe servicii? Îți fac un pachet pe măsură.</p>
         </div>
       </div>
     </section>

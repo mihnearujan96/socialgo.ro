@@ -15,9 +15,9 @@ export function PhotoWorld() {
         </div>
         <SectionHeading
           number="04"
-          eyebrow="Photography"
-          title={'EMOȚII REALE.\nAMINTIRI CARE RĂMÂN.'}
-          description="Nunți, evenimente, portrete și branding — fotografiate de Mihnea Rujan."
+          eyebrow="Fotografie"
+          title={'NUNȚI ȘI EVENIMENTE\nFĂCUTE CU GRIJĂ.'}
+          description="Fotografiate de Mihnea Rujan. Discutăm înainte, ca să știm ce contează pentru tine în ziua respectivă."
         />
 
         <div className="mt-12">
@@ -49,9 +49,9 @@ export function PhotoWorld() {
         </div>
 
         <div className="mt-10 flex flex-wrap gap-4">
-          <Button to="/fotografie">Vezi fotografia</Button>
+          <Button href="/#pricing">Vezi prețurile</Button>
           <Button href={contactInfo.photographySite} variant="outline" target="_blank" rel="noreferrer">
-            Portofoliu Mihnea Rujan
+            Portofoliu pe mihnearujan.ro
           </Button>
         </div>
       </div>

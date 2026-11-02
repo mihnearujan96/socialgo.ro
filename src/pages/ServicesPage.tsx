@@ -7,7 +7,8 @@ import { usePageMeta } from '@/hooks/usePageMeta'
 export default function ServicesPage() {
   usePageMeta({
     title: 'Servicii — SocialGo',
-    description: 'Web development, aplicații, marketing, fotografie, video, drone și soluții pentru hospitality.',
+    description:
+      'Site-uri, aplicații, Reels, fotografie, video, drone și soluții pentru firme — într-un singur studio.',
     path: '/servicii',
   })
 
@@ -15,8 +16,8 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Servicii"
-        title={'OPT LUMI.\nO SINGURĂ ECHIPĂ.'}
-        description="Alege disciplina potrivită — sau combină-le într-un pachet complet pentru brandul tău."
+        title={'TOT CE FAC,\nÎNTR-UN SINGUR LOC.'}
+        description="Alege ce ai nevoie — sau combină mai multe într-un pachet pentru firmă sau eveniment."
         tone="from-violet/10"
       />
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">

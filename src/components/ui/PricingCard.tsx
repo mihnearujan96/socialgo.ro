@@ -1,17 +1,20 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, MessageCircle } from 'lucide-react'
 import { Button } from './Button'
 import type { PricingPackage } from '@/data/pricing'
+import { contactInfo } from '@/data/contact'
 import { cn } from '@/lib/utils'
 
 interface PricingCardProps {
   pkg: PricingPackage
-  ctaTo?: string
 }
 
-export function PricingCard({ pkg, ctaTo = '/contact' }: PricingCardProps) {
+export function PricingCard({ pkg }: PricingCardProps) {
   const [open, setOpen] = useState(false)
+  const waHref = `https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent(
+    `Bună! Mă interesează pachetul „${pkg.name}” (${pkg.price}).`,
+  )}`
 
   return (
     <article
@@ -68,8 +71,15 @@ export function PricingCard({ pkg, ctaTo = '/contact' }: PricingCardProps) {
         )}
       </AnimatePresence>
 
-      <Button to={ctaTo} variant={pkg.highlight ? 'primary' : 'outline'} className="mt-6 w-full">
-        Solicită o ofertă
+      <Button
+        href={waHref}
+        target="_blank"
+        rel="noreferrer"
+        variant={pkg.highlight ? 'primary' : 'outline'}
+        className="mt-6 w-full"
+      >
+        <MessageCircle className="h-4 w-4" />
+        WhatsApp
       </Button>
     </article>
   )

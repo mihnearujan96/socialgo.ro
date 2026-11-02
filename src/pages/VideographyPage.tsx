@@ -2,20 +2,21 @@ import { PageHero } from '@/components/ui/PageHero'
 import { Button } from '@/components/ui/Button'
 import { videoServices } from '@/data/services'
 import { usePageMeta } from '@/hooks/usePageMeta'
+import { contactInfo } from '@/data/contact'
 
 export default function VideographyPage() {
   usePageMeta({
     title: 'Videografie — SocialGo',
-    description: 'Filme de nuntă, video promoțional, brand films și Reels. Producție cinematică în România.',
+    description: 'Filme de nuntă, video promoțional pentru firmă și Reels. Producție video în România.',
     path: '/videografie',
   })
 
   return (
     <>
       <PageHero
-        eyebrow="05 · Videography"
-        title={'POVEȘTI CARE\nMERITĂ SĂ FIE VĂZUTE.'}
-        description="De la filme de eveniment la conținut comercial — ritm, atmosferă, montaj atent."
+        eyebrow="05 · Videografie"
+        title={'FILME PENTRU\nEVENIMENTE ȘI FIRMĂ.'}
+        description="De la filme de eveniment la promoții pentru firmă — ritm bun, atmosferă și montaj atent."
         tone="from-violet/10"
       />
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
@@ -38,7 +39,12 @@ export default function VideographyPage() {
           ))}
         </div>
 
-        <Button to="/contact" className="mt-10">
+        <Button
+          href={`https://wa.me/${contactInfo.whatsapp}`}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-10"
+        >
           Discută un proiect video
         </Button>
       </section>

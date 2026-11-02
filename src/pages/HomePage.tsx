@@ -13,9 +13,9 @@ import { usePageMeta } from '@/hooks/usePageMeta'
 
 export default function HomePage() {
   usePageMeta({
-    title: 'SocialGo — Creative Technology Studio',
+    title: 'SocialGo — Site-uri, marketing, foto & video',
     description:
-      'Development, marketing și producție vizuală. Un singur studio pentru ideile care merită să iasă în evidență.',
+      'Site-uri, Reels, fotografie, video și drone pentru firme și evenimente. Studio digital în România.',
     path: '/',
   })
 

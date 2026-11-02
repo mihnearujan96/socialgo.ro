@@ -4,6 +4,12 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { preferReducedMotion } from '@/lib/utils'
 
+declare global {
+  interface Window {
+    __socialgoLenis?: Lenis
+  }
+}
+
 gsap.registerPlugin(ScrollTrigger)
 
 export function SmoothScroll({ children }: { children: ReactNode }) {
@@ -17,6 +23,7 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
     })
 
     lenis.on('scroll', ScrollTrigger.update)
+    window.__socialgoLenis = lenis
 
     const ticker = (time: number) => {
       lenis.raf(time * 1000)
@@ -26,6 +33,7 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
 
     return () => {
       gsap.ticker.remove(ticker)
+      if (window.__socialgoLenis === lenis) delete window.__socialgoLenis
       lenis.destroy()
     }
   }, [])

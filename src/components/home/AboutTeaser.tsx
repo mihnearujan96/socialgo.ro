@@ -9,15 +9,14 @@ export function AboutTeaser() {
           <SectionHeading
             number="09"
             eyebrow="Despre"
-            title={'INGINERIE ÎNTÂLNEȘTE\nCREATIVITATEA.'}
+            title={'CINE ESTE\nÎN SPATELE SOCIALGO.'}
           />
           <p className="mt-6 max-w-xl text-muted leading-relaxed">
-            SocialGo este studio-ul lui Mihnea Rujan — inginer cu apucături de fotograf și videograf.
-            Combinăm tehnologie, storytelling vizual și gândire de business pentru branduri care vor
-            mai mult decât o prezență online standard.
+            În spatele SocialGo e o echipă. Facem site-uri, aplicații, conținut, foto și video
+            pentru firme și evenimente.
           </p>
           <Button to="/despre" variant="outline" className="mt-8">
-            Cunoaște studio-ul
+            Citește mai mult
           </Button>
         </div>
 
@@ -25,15 +24,16 @@ export function AboutTeaser() {
           <div className="relative overflow-hidden rounded-[2rem] border border-border bg-surface aspect-[4/5] md:aspect-auto md:min-h-[420px]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_30%,rgba(199,255,61,0.15),transparent_45%),linear-gradient(160deg,#171A20,#08090B)]" />
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-              <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-accent">Founder</p>
-              <p className="mt-2 font-display text-3xl">Mihnea Rujan</p>
+              <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-accent">Echipa</p>
+              <p className="mt-2 font-display text-3xl">SocialGo</p>
               <p className="mt-2 text-sm text-muted">
-                „Inginer, cu apucături de fotograf și videograf.”
+                Site-uri, aplicații, foto, video și drone.
               </p>
-              <div className="mt-6 grid grid-cols-3 gap-2 font-mono text-[10px] text-muted">
-                <div className="rounded-xl border border-border p-3">DEV</div>
-                <div className="rounded-xl border border-border p-3">MEDIA</div>
-                <div className="rounded-xl border border-border p-3">LENS</div>
+              <div className="mt-6 grid grid-cols-2 gap-2 font-mono text-[10px] text-muted">
+                <div className="rounded-xl border border-border p-3">SITE-URI</div>
+                <div className="rounded-xl border border-border p-3">APLICAȚII</div>
+                <div className="rounded-xl border border-border p-3">FOTO & VIDEO</div>
+                <div className="rounded-xl border border-border p-3">DRONE</div>
               </div>
             </div>
           </div>

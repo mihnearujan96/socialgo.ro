@@ -6,49 +6,56 @@ import { usePageMeta } from '@/hooks/usePageMeta'
 export default function AboutPage() {
   usePageMeta({
     title: 'Despre — SocialGo',
-    description: 'Mihnea Rujan și SocialGo: unde ingineria întâlnește creativitatea vizuală.',
+    description:
+      'SocialGo e o echipă: site-uri, aplicații, marketing, foto și video pentru afaceri și evenimente.',
     path: '/despre',
   })
 
   return (
     <>
       <PageHero
-        eyebrow="About"
-        title={'INGINERIE ÎNTÂLNEȘTE\nCREATIVITATEA.'}
-        description="SocialGo este un studio de creative technology construit în jurul unei idei simple: brandurile merită atât produs digital solid, cât și povești vizuale autentice."
+        eyebrow="Despre"
+        title={'DE LA IDEE\nLA LUCRU GATA.'}
+        description="Facem site-uri, conținut și foto-video pentru oameni și firme care vor rezultate clare, fără povești umflate."
         tone="from-accent/10"
       />
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7 space-y-5 text-muted leading-relaxed">
             <p>
-              Sunt Mihnea Rujan — inginer cu apucături de fotograf și videograf. Am crescut într-un
-              loc plin de povești și am învățat să apreciez autenticitatea momentelor dintre oameni.
+              SocialGo e o echipă. Facem site-uri, aplicații, Reels, marketing, fotografie, video și
+              filmări cu drona pentru firme, evenimente și branduri personale.
             </p>
             <p>
-              SocialGo unește software engineering, web development, marketing digital, fotografie,
-              videografie și producție drone. Lucrăm cu afaceri, evenimente și branduri personale.
-            </p>
-            <p>
-              Nu promitem miracole de marketing și nu inventăm premii. Construim lucruri clare,
-              frumoase și utile — apoi le facem să se simtă.
+              Îți spunem ce se poate face, cât costă și cine se ocupă. Apoi lucrăm.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button to="/contact">Hai să vorbim</Button>
-              <Button href={contactInfo.photographySite} variant="outline" target="_blank" rel="noreferrer">
+              <Button
+                href={`https://wa.me/${contactInfo.whatsapp}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Scrie pe WhatsApp
+              </Button>
+              <Button
+                href={contactInfo.photographySite}
+                variant="outline"
+                target="_blank"
+                rel="noreferrer"
+              >
                 mihnearujan.ro
               </Button>
             </div>
           </div>
           <div className="lg:col-span-5">
             <div className="rounded-[2rem] border border-border bg-surface p-6 md:p-8">
-              <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-accent">Profil</p>
-              <p className="mt-4 font-display text-3xl">Mihnea Rujan</p>
-              <p className="mt-2 text-sm text-muted">Founder · Creative Technology</p>
+              <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-accent">Echipa</p>
+              <p className="mt-4 font-display text-3xl">SocialGo</p>
+              <p className="mt-2 text-sm text-muted">Site-uri, foto, video și drone — împreună.</p>
               <dl className="mt-8 space-y-4 text-sm">
                 <div className="flex justify-between border-b border-border pb-3">
                   <dt className="text-muted">Locație</dt>
-                  <dd>România / Europa</dd>
+                  <dd>România</dd>
                 </div>
                 <div className="flex justify-between border-b border-border pb-3">
                   <dt className="text-muted">Email</dt>

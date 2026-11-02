@@ -14,9 +14,9 @@ export function DroneWorld() {
 
         <SectionHeading
           number="06"
-          eyebrow="Drone Production"
-          title={'O NOUĂ PERSPECTIVĂ\nASUPRA LUMII.'}
-          description="Cadre aeriene pentru turism, imobiliare și business — unde zborul este legal și sigur."
+          eyebrow="Filmări cu drona"
+          title={'CADRE AERIENE,\nUNDE SE POATE.'}
+          description="Cadre aeriene pentru turism, imobiliare, hoteluri sau business — doar unde zborul este legal și sigur."
         />
 
         <ul className="mt-12 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
@@ -29,8 +29,8 @@ export function DroneWorld() {
 
         <p className="mt-8 max-w-3xl text-sm text-muted">{droneNote}</p>
 
-        <Button to="/drona" variant="outline" className="mt-8">
-          Servicii drone
+        <Button href="/#pricing" variant="outline" className="mt-8">
+          Vezi prețurile
         </Button>
       </div>
     </section>

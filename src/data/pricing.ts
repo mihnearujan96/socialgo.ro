@@ -12,71 +12,92 @@ export interface PricingPackage {
 export const webPricing: PricingPackage[] = [
   {
     id: 'starter',
-    name: 'Starter Website',
+    name: 'Site de start',
     price: 'de la 200 €',
-    description: 'Landing page sau site de prezentare simplu, clar și responsive.',
+    description: 'O pagină de prezentare sau un site scurt, clar pe telefon și pe computer.',
     details: [
-      'Structură concisă, orientată pe mesaj',
+      'Structură simplă, pe mesajul tău',
       'Design responsive',
-      'Formă de contact',
-      'Optimizare de bază SEO',
+      'Buton de contact (WhatsApp / telefon)',
+      'Optimizare de bază pentru Google',
     ],
   },
   {
     id: 'business',
-    name: 'Business Website',
+    name: 'Site business',
     price: '400 – 500 €',
-    note: 'interval de start',
-    description:
-      'Website de business mai complex, cu mai multe secțiuni și funcționalități adiționale.',
+    note: 'preț de start',
+    description: 'Site cu mai multe secțiuni sau pagini, potrivit unei firme care vrea să arate serios online.',
     details: [
-      'Multiple secțiuni / pagini',
-      'Design responsive avansat',
-      'Integrări esențiale',
-      'Pregătit pentru creștere',
+      'Mai multe secțiuni sau pagini',
+      'Design îngrijit pe mobil și desktop',
+      'Integrări de bază (formulare, hărți etc.)',
+      'Pregătit să crească pe măsură ce ai nevoie',
     ],
     highlight: true,
   },
   {
     id: 'custom',
-    name: 'Custom Web Application',
-    price: 'orientativ ~2.000 €',
-    note: 'preț indicativ, pe bază de ofertă',
+    name: 'Aplicație web și mobil',
+    price: 'de la 1.500 €',
+    note: 'preț de start, după discuție',
     description:
-      'Sisteme de booking, aplicații de rezervări, dashboard-uri, platforme de management și software web personalizat.',
+      'Aplicații web și mobile: rezervări, panouri interne, platforme — făcute pe procesul tău.',
     details: [
-      'Analiză și consultanță',
-      'Arhitectură pe măsură',
-      'Dezvoltare full-stack',
-      'Ofertă personalizată după cerințe',
+      'Discuție despre ce ai nevoie',
+      'Structură pe măsură',
+      'Dezvoltare și testare',
+      'Ofertă clară înainte să începem',
     ],
   },
 ]
+
+/** Max selectable reels in the calculator. */
+export const reelsMaxCount = 20
+
+/** Base 300 lei / reel; softer volume discount on unit price. */
+export function reelsUnitPrice(count: number): number {
+  const n = Math.max(1, Math.min(reelsMaxCount, Math.round(count)))
+  if (n <= 1) return 300
+  if (n <= 3) return 285
+  if (n <= 6) return 270
+  if (n <= 12) return 255
+  return 240
+}
+
+export function reelsTotal(count: number): number {
+  const n = Math.max(1, Math.min(reelsMaxCount, Math.round(count)))
+  return reelsUnitPrice(n) * n
+}
 
 export const marketingPricing: PricingPackage[] = [
   {
     id: 'reels',
     name: 'Producție Reels',
-    price: 'de la 350 RON',
-    description: 'Conținut vertical scurt, gândit pentru atracție și ritm pe social media.',
+    price: 'de la 300 lei',
+    note: 'scade dacă iei mai multe',
+    description:
+      'Video scurt, vertical, pentru Instagram sau TikTok. Un reel: 300 lei. La volume mai mari, prețul pe bucată scade.',
     details: [
-      'Concept și montaj',
-      'Format vertical optimizat',
-      'Livrare potrivită pentru Instagram / TikTok',
+      '1 reel → 300 lei',
+      '2–3 → 285 lei / reel',
+      '4–6 → 270 lei / reel',
+      '7–12 → 255 lei / reel',
+      '13+ → 240 lei / reel',
     ],
     highlight: true,
   },
   {
     id: 'campaigns',
-    name: 'Campanii & management',
+    name: 'Campanii & administrare',
     price: 'ofertă personalizată',
     description:
-      'Pentru campanii complete, pachete lunare și management continuu, lucrăm pe bază de briefing și ofertă dedicată.',
+      'Pentru pachete lunare, campanii și administrare continuă, stabilim împreună ce ai nevoie și cât costă.',
     details: [
-      'Strategie de conținut',
-      'Producție creativă',
-      'Administrare și publicare',
-      'Consultanță pe obiective',
+      'Plan de conținut',
+      'Producție (foto / video / Reels)',
+      'Publicare și administrare',
+      'Discuție pe obiective reale',
     ],
   },
 ]
@@ -86,26 +107,42 @@ export const photoPricing: PricingPackage[] = [
     id: 'wedding-photo',
     name: 'Fotografie de nuntă',
     price: 'de la 700 €',
-    description: 'Acoperire fotografică pentru ziua nunții, cu atenție la momentele esențiale.',
-    details: ['Discuție preliminară', 'Acoperire eveniment', 'Selecție și editare'],
+    description: 'Acoperire foto pentru ziua nunții. Inclus stick cu fotografiile.',
+    details: ['Discuție înainte', 'Acoperire eveniment', 'Selecție și editare', 'Stick cu fotografiile'],
     highlight: true,
   },
   {
     id: 'wedding-combo',
-    name: 'Foto + Video nuntă',
-    price: 'de la 1.400 €',
-    description: 'Pachet combinat fotografie și videografie pentru o poveste vizuală completă.',
-    details: ['Echipă foto + video', 'Acoperire eveniment', 'Livrare foto și film'],
+    name: 'Foto + video nuntă',
+    price: '1.400 €',
+    description: 'Fotografii și film pentru ziua nunții. Inclus stick și album.',
+    details: ['Echipă foto + video', 'Acoperire eveniment', 'Stick cu materialele', 'Album foto'],
+    highlight: true,
+  },
+  {
+    id: 'baptism',
+    name: 'Pachet botez',
+    price: '550 €',
+    description: 'Pachet pentru ziua de botez — ceremonie și petrecere. Inclus stick.',
+    details: ['Acoperire ceremonie și petrecere', 'Selecție și editare', 'Galerie digitală', 'Stick cu fotografiile'],
+    highlight: true,
+  },
+  {
+    id: 'majorat',
+    name: 'Pachet majorat',
+    price: '170 €',
+    description: 'Acoperire foto pentru majorat — rapid, clar, gata de postat.',
+    details: ['Acoperire eveniment', 'Editare foto', 'Livrare potrivită pentru telefon'],
   },
   {
     id: 'other-events',
     name: 'Alte evenimente & ședințe',
-    price: 'preț personalizat',
+    price: 'preț la cerere',
     note: 'în funcție de eveniment',
-    description: 'Botezuri, aniversări, portrete, branding personal, hoteluri și business.',
-    details: ['Briefing dedicat', 'Durată și livrabile pe măsură', 'Consultație înainte de rezervare'],
+    description: 'Aniversări, portrete, branding personal, hoteluri și business.',
+    details: ['Discuție pe WhatsApp', 'Durată și livrabile pe măsură', 'Ofertă înainte de rezervare'],
   },
 ]
 
 export const droneNote =
-  'Operațiunile cu drona sunt condiționate de autorizări legale, restricții de zbor și condiții locale. Piloți certificați EASA. Zonele NO FLY sunt respectate.'
+  'Zborul cu drona depinde de autorizări, restricții locale și vreme. Lucrez cu piloți certificați EASA și respect zonele în care zborul este interzis.'

@@ -19,15 +19,37 @@ export function Layout() {
   }, [])
 
   useEffect(() => {
-    if (location.hash) {
-      const id = location.hash.replace('#', '')
-      const timer = window.setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }, 80)
-      return () => window.clearTimeout(timer)
+    if (loading) return
+
+    if (!location.hash) {
+      window.__socialgoLenis?.scrollTo(0, { immediate: true })
+      window.scrollTo(0, 0)
+      return
     }
-    window.scrollTo(0, 0)
-  }, [location.pathname, location.hash])
+
+    const id = location.hash.replace('#', '')
+    let cancelled = false
+    const scrollToHash = () => {
+      if (cancelled) return
+      const el = document.getElementById(id)
+      if (!el) return
+      const lenis = window.__socialgoLenis
+      if (lenis) {
+        lenis.resize()
+        lenis.scrollTo(el.getBoundingClientRect().top + lenis.scroll - 24, { immediate: true })
+      } else {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+
+    const t1 = window.setTimeout(scrollToHash, 60)
+    const t2 = window.setTimeout(scrollToHash, 450)
+    return () => {
+      cancelled = true
+      window.clearTimeout(t1)
+      window.clearTimeout(t2)
+    }
+  }, [location.pathname, location.hash, loading])
 
   return (
     <SmoothScroll>

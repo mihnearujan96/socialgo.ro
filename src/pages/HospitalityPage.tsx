@@ -2,22 +2,24 @@ import { PageHero } from '@/components/ui/PageHero'
 import { Button } from '@/components/ui/Button'
 import { hospitalityBundle } from '@/data/services'
 import { usePageMeta } from '@/hooks/usePageMeta'
+import { contactInfo } from '@/data/contact'
 
 export default function HospitalityPage() {
   usePageMeta({
-    title: 'Business — SocialGo',
+    title: 'Soluții pentru business — SocialGo',
     description:
-      'Soluții digitale pentru business: website, aplicații, foto, video, drone și social media.',
+      'Site, aplicații, foto, video, drone și social media — un pachet pe măsură pentru firma ta.',
     path: '/hoteluri-business',
   })
 
   return (
     <>
       <PageHero
-        eyebrow="07 · Business"
-        title={'AFACEREA TA MERITĂ MAI MULT\nDECÂT UN SIMPLU WEBSITE.'}
-        description="Website, conținut și producție vizuală — un pachet adaptat afacerii tale și obiectivelor pe care le ai."
-        ctaLabel="Hai să vorbim despre proiectul tău"
+        eyebrow="07 · Pentru firme"
+        title={'MAI MULT DECÂT\nUN SITE SIMPLU.'}
+        description="Putem lega site-ul, conținutul și producția vizuală într-un pachet potrivit obiectivelor tale."
+        ctaHref={`https://wa.me/${contactInfo.whatsapp}`}
+        ctaLabel="Hai să vorbim pe WhatsApp"
         tone="from-accent/10"
       />
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
@@ -30,7 +32,9 @@ export default function HospitalityPage() {
           ))}
         </ul>
         <div className="mt-10 flex flex-wrap gap-4">
-          <Button to="/contact">Solicită o ofertă</Button>
+          <Button href={`https://wa.me/${contactInfo.whatsapp}`} target="_blank" rel="noreferrer">
+            WhatsApp
+          </Button>
           <Button href="/#pricing" variant="outline">
             Vezi prețurile
           </Button>
